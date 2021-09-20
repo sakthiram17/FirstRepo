@@ -55,6 +55,7 @@ color:#FAB162;
 }
 #myNavbar ul li a{
 	color:#FAB162;
+	text-align:center;
 }
 #myNavbar ul li a:hover{
 	background-color:white;
