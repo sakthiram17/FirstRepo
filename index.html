@@ -44,11 +44,11 @@ ul{
   padding:20px 0px 20px 0px;
 }
 .navbar a:hover{
-  background-color:darkgreen;
+  background-color:#0091ff;
 opacity:1;
 }
 .navbar a:active{
-background-color:darkgreen;
+background-color:#0091ff;
 opacity:0.7;
 }
 @media (min-width: 992px) {
@@ -288,24 +288,20 @@ var data4 = [
   {
     x: ['REM SLeep (in hours)', 'Deep Sleep (in hours)', 'Light Sleep(in hours)','Awake (in hours)'],
     y: [3, 4, 1,2],
-    type: 'bar'
+    type: 'bar',
+     marker: {
+    line: {
+      width: 2
+    }
+  }
+    
   }
 ];
-var layout2 = {
-  xaxis:{
-   gridwidth:0.1
-  },
 
-  yaxis: {
-    zeroline: false,
-    gridwidth: 0.2
-  },
-  bargap :0.05
-};
 
 Plotly.newPlot('graph2', data2,layout);
 Plotly.newPlot('graph1', data,layout);
-Plotly.newPlot('bargraph',data4,layout2);
+Plotly.newPlot('bargraph',data4);
 
 setInterval(function() {
   
