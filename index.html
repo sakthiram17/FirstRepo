@@ -292,18 +292,16 @@ var data4 = [
   }
 ];
 var layout2 = {
- 
-  xaxis: {
-    tickangle: -45
-    gridwidth:0.01
+  xaxis:{
+   gridwidth:0.1
   },
+
   yaxis: {
     zeroline: false,
-    gridwidth: 2
+    gridwidth: 0.2
   },
   bargap :0.05
 };
-
 
 Plotly.newPlot('graph2', data2,layout);
 Plotly.newPlot('graph1', data,layout);
