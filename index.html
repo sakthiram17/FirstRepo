@@ -3,28 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
 body {
   font-size:16px;
   color:#fff;
-  background:url("op2.jpg");
-  background-size:1920px 1080px;
+
+
+  background-size:cover;
   margin:0px;
+}
+html{
+  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 #centerbutton{
   display: flex;
   justify-content:center;
 }
+#centerrun{
+  display: flex;
+  justify-content:center;
+}
+#centerclock{
+  display: flex;
+  color:black;
+  justify-content:center;
+}
+
+#clock{
+  color:black;
+  font-size:25px; 
+}
+
+
 .navbar{
   width: 100%;
-  background-color:black;
-  color:white;
+background:black;
+
+  color:black;
   width:100%;
   font-size:20px;
   opacity:0.9;
   margin-botom:50px;
+  
 
 }
 .navbar li{
@@ -44,7 +71,7 @@ ul{
   padding:20px 0px 20px 0px;
 }
 .navbar a:hover{
-  background-color:#0091ff;
+  background:blue;
 opacity:1;
 }
 .navbar a:active{
@@ -143,8 +170,10 @@ opacity:0.7;
   background-color:white;
   margin: 20px;
   padding: 0px 0px 0px 00px;
-  opacity: 0.9;
+  opacity: 0.8;
  height:600px;
+
+
 }
 *{
   box-sizing: border-box;
@@ -157,7 +186,26 @@ span{
   text-align:center;
   font-size:30px;
   padding:5px;
-  opacity:0.9;
+
+}
+
+#prev{
+  position:relative;
+ padding:10px 20px;
+ float: left;
+ margin-left:50px;
+ background-color:#4CAF50;
+ color:white;
+ border:none;
+}
+#next{
+position: relative;
+ padding:10px 20px;
+ float: right;
+ margin-right: 50px;
+ background-color:#4CAF50;
+ color: white;
+ border:none;
 }
 #button1{
   background-color: #4CAF50; /* Green */
@@ -174,7 +222,7 @@ span{
   opacity:0.9;
 }
 p{
-  padding:10px;
+  
 }
 img{
 
@@ -186,16 +234,16 @@ h1{
   display:inline;
   align: center;
   display: flex;
-  size:inherit;
   justify-content: center;
+    size:inherit;
   
 }
 #graph2{
   display:inline;
  align: center;
  display: flex;
-  size:inherit;
   justify-content: center;
+    size:inherit;
 
 }
 #bargraph{
@@ -203,7 +251,8 @@ h1{
  align: center;
  display: flex;
   justify-content: center;
-size:inherit;
+  size:inherit;
+
 }
 #hidden{
   display:none;
@@ -211,7 +260,14 @@ size:inherit;
 p{
   font-size:20px;
 }
-
+#working{
+  background-color:#e60000;
+  width:200px;
+   padding: 15px 32px;
+  text-align:center;
+  color:white;
+ 
+}
 </style>
  
     <title>Sleep Analyser</title>
@@ -230,15 +286,28 @@ p{
     <span class = "sectiont">Data Fetcher</span>
   <p id ="text">
   <div id ="centerbutton">
-  <button id = "button1" type = "button" onclick="Plot_Graphs()">Get Sleep Analysis</button></div>
-  </p></div></div>
+
+  <button id = "button1" type = "button">Get Sleep Analysis</button>
+</div>
+    
+  </p>
+ <div id = "centerrun">
+  <p id ="working">The Device is not Running</p>
+  </div>
+  <div id = "centerclock">
+  <p id ="clock"></p>
+  </div>
+
+</div></div>
+
  <div class="col-lg-6 col-md-6 col-s-12">
     <div class = "section">
-    <span class = "sectiont">Sleep Histogram</span>
-
+    <span class = "sectiont">Movements detected</span>
   <p>
-  <div id = "graph1"></div>
 
+  <div id = "graph1"></div>
+     <button id = "prev" type = "button"><</button>
+   <button id = "next" type = "button">></button>
   </p></div></div>
  
  <div class="col-lg-6 col-md-6 col-s-12">
@@ -253,14 +322,24 @@ p{
   <p>
     <div id = "bargraph"></div>
   </p></div></div>
- 
- 
+
 </div>
+ 
 <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script> 
 <script type="text/javascript">
- var x = [];
+next_click = 0;
+prev_click = 0;
+document.getElementById("button1").addEventListener("click", Plot_Graphs);
+var data_set = [];
+function setTime()
+{
+var d = new Date();
+var Hour = d.getHours();
+var minute = d.getMinutes();
+var second = d.getSeconds();
+document.getElementById("clock").textContent =String(Hour)+':'+String(minute)+':'+String(second);}
+var x = [];
 var time = [];
-var data_set = [1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 1 1];
 for (var i = 0; i < 500; i ++) {
   x[i] = Math.random();
 }
@@ -300,98 +379,273 @@ var data4 = [
   }
 ];
 
-
+time_iter = 0;
+time = [];
 Plotly.newPlot('graph2', data2,layout);
 Plotly.newPlot('graph1', data,layout);
 Plotly.newPlot('bargraph',data4);
 
+setInterval(function() {
+  
+  getData();
+    setTime();
+}, 1000); 
+function getData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+     var l = this.responseText.length;
+    if (this.readyState == 4 && this.status == 200&& (this.responseText[l-1]==0||this.responseText[l-1]==1)) {
+      data_set = this.responseText;
+      document.getElementById("working").textContent = "The Device is Running";
+      document.getElementById("working").style.backgroundColor = "#4CAF50";
+        var d = new Date();
+    var minutes = d.getMinutes();
+    var seconds = d.getSeconds();
+    var hours = d.getHours();
+    var temp = String(hours)+':'+String(minutes)+':'+String(seconds);
+    //time.push(temp);
+    }
+   
+    else if(this.responseText[l-1] == 's')
+    {
+      document.getElementById("working").textContent = "The Device is not Running";
+      document.getElementById("working").style.backgroundColor = "#e60000";
+    }
+  
+  };
+  xhttp.open("GET", "app", true);
+  xhttp.send();
 
+}
+
+/*function getData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if(this.responseText == "stop")
+    {
+      document.getElementById("working").textContent = "The Device is not Running";
+      document.getElementById("working").style.backgroundColor = "#e60000";
+    }
+
+    if (this.readyState == 4 && this.status == 200&& (this.responseText==0||this.responseText==1)) {
+      data_set.push(this.responseText);
+      document.getElementById("working").textContent = "The Device is Running";
+      document.getElementById("working").style.backgroundColor = "#4CAF50";
+        var d = new Date();
+    var minutes = d.getMinutes();
+    var seconds = d.getSeconds();
+    var hours = d.getHours();
+    time.push(String(hours)+":"+String(minutes)+":"+String(seconds));
+    }
+   
+  
+  };
+  xhttp.open("GET", "app", true);
+  xhttp.send();
+  
+}*/
+document.getElementById("prev").addEventListener("click", move_prev);
+document.getElementById("next").addEventListener("click", move_next);
+function move_next()
+{ 
+  if(next_click>prev_click)
+  {
+    alert("You are at the end of Graph");
+  }
+  time1 = time.slice(data_set1.length-100,data.set1.length-1)
+  next_click = next_click+1;
+  data_set1 = data_set.split("");
+ new_data_set = data_set1.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100);
+var data_0 = [
+  {
+    x: time1,
+    y: new_data_set,
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('graph1', data_0);
+}
+function move_prev()
+{ time1 = time.slice(data_set1.length-100,data_set1.length-1)
+  if((prev_click*99>data_set.length))
+  {
+    alert("You are at the end of Graph");
+  }
+  prev_click = prev_click +1;
+  data_set1 = data_set.split("");
+ new_data_set = data_set1.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100)
+var data_0 = [
+  {
+    x: time1,
+    y: new_data_set,
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('graph1', data_0);
+}
 function Plot_Graphs()
 {
-var x = []
-var x_iter = 0 
-for (var i = 0; i < data_set.length; i ++) {
-  if(data_set[i]==1)
+  if(data_set.length>1&&data_set!=null)
   {
-    x_iter = x_iter+1;
-    x[x_iter] = 1;
-
-  }
-  else if(data_set[i]==0)
-  {
-    x_iter = x_iter+1;
-    x[x_iter] = 0
-  }
+  x = data_set.split("");
 }
 //if(data_set.length<120)
 //{
  // alert("Device has ran for less than a hour please come back later");
  // return;
 //}
-var t = []
-for(var i = 0;i<x_iter;i++)
-{
-  t[i] = (i+1)/120;
-}
-temp = x;
-temp2 = t;
-var data_1 = [{
-    y:temp,
-    x:temp2,
-    type: 'bar'
-  }];
 
-ta = Plotly.newPlot('graph1', data_1);
+
+/*l2 = time.length;
+l1 = data_set.length;
+if(l1!=l2)
+{
+  while(l1!=l2){
+  start_time = time[0].split(":");
+  console.log(start_time[0]);
+  console.log(start_time[1]);
+  console.log(start_time[2]);
+  if((l1-l2)%60<60)
+  { seconds = String((parseInt(start_time[2])-(l1-l2)%60));
+    console.log(seconds);
+    if(parseInt(seconds)>0)
+    {
+    t = start_time[0]+":"+start_time[1]+":"+seconds;
+    }
+    else{
+      if(parseInt(start_time[1])-1<0){
+      var hours_fin = String(parseInt(start_time[0]) - 1);
+      t = hours_fin+":"+string(60-parseInt(start_time[1]))+":"+start_time[2];
+
+      }else{
+
+      seconds = String(60-parseInt(seconds));
+      var newmin = String(parseInt(start_time[1])-1);
+      t = start_time[0]+":"+newmin+":"+seconds;
+     console.log(seconds);}
+    }
+   l1 = l1-1;
+  }
+  else if(((l1-l2)%60)>=60&&((l1-l2)%60<3600))
+  {
+    var extramin = (l1-l2)%60;
+    var min_fin = -extramin + parseInt(start_time[1]);
+    if(min_fin<0)
+    {
+      if(start_time[0]<1)
+      {
+      var min_fin = String(min_fin-60);
+      hours_fin = String(24+hours_fin);
+      var hours_fin = String(parseInt(start_time[0]) - 1);
+      t = hours_fin+":"+min_fin+":"+start_time[2];
+      }
+      else{
+      var min_fin = String(min_fin-60);
+      var hours_fin = String(parseInt(start_time[0]) - 1);
+      t = hours_fin+":"+min_fin+":"+start_time[2];
+}
+    }
+    else{
+      t = start_time[0]+":"+min_fin+":"+start_time[2];
+    }
+    l1 = l1-1;
+}
+else if((l1-l2)%60>=3600)
+{
+var extrahour = (l1-l2)%3600;
+var hour_fin = -extrahour + parseInt(start_time[0]);
+if(hours_fin>0)
+{
+ t = hour_fin+":"+start_time[1]+":"+start_time[2];
+}
+else{
+hours_fin = String(24+hours_fin);
+ t = hour_fin+":"+start_time[1]+":"+start_time[2];
+
+}
+l1 = l1 - 1;
+}
+ 
+ time.unshift(t);
+}
+}*/
+for(var i = 0;i<data_set.length;i++)
+  {time.push(i+1);
+}
+
+
+
 var rem_iter = 0;
 var light_iter = 0;
-var none_iter = 0;
+var deep_sleep_iter = 0;
 var time_step = 30;
-var rem = 5*60/30;
-var light = 2*60/30;
-var no_sleep = 15*60/30;
+var rem = 5*60;
+var light = 2*60;
+var no_sleep = 15*60;
 var n_rem = 0;
 var n_light = 0;
 var n_none = 0;
+var n_deep_sleep = 0;
 for(var i = 0;i<data_set.length;i++)
 {
-  if(data_set[i] == 0)
+  if(data_set[i] == '0')
   {
     rem_iter =rem_iter +1;
     light_iter = light_iter +1;
-    none_iter = none_iter +1;
+    deep_sleep_iter = deep_sleep_iter+1;
   }
   else{
  rem_iter = 0;
     light_iter = 0;
-    none_iter = 0; 
+    deep_sleep_iter = 0;
 
   }
-  if(rem_iter ==2)
+  if(rem_iter ==rem/time_step)
   {
     rem_iter = 0;
     n_rem = n_rem+1
   }
-  if(light_iter==4)
+  if(light_iter==light/time_step)
   {
     light_iter = 0;
     n_light = n_light +1
   }
-  if(none_iter==6)
+  if(deep_sleep_iter==no_sleep/time_step)
   {
 
-  none_iter = 0;
-  n_none = n_none +1;
+  deep_sleep_iter = 0;
+  n_deep_sleep = n_deep_sleep + 1;
   }
-
-  console.log(rem_iter);
-
 }
-
-var total = x_iter;
+data_set1 = data_set.split("");
+plot_data_set = data_set1.slice(data_set.length-100,data_set.length-1);
+if(time.length>=100)
+{
+time1 = time.slice(data_set.length-100,data_set.length-1);
+var data_0 = [
+  {
+    x: time1,
+    y: plot_data_set,
+    type: 'bar'
+  }
+];
+}else{
+  var data_0 = [
+  {
+    x: time,
+    y: plot_data_set,
+    type: 'bar'
+  }
+];
+}
+var total = x.length;
 var rem_percent = (n_rem/total)*100;
-var none_percent = (n_light/total)*100;
-var light_percent = (n_none/total)*100;
-var deep_percent =  100 - rem_percent - none_percent - light_percent;
+var deep_percent = (n_deep_sleep/total)*100;
+var light_percent = (n_light/total)*100;
+var none_percent =  100 - rem_percent - deep_percent - light_percent;
 var data_2 = [{
   values: [rem_percent, deep_percent, light_percent,none_percent],
   labels: ['REM Sleep', 'Deep Sleep', 'Light Sleep','Awake'],
@@ -400,10 +654,12 @@ var data_2 = [{
 var data4 = [
   {
     x: ['REM SLeep (in hours)', 'Deep Sleep (in hours)', 'Light Sleep(in hours)','Awake (in hours)'],
-    y: [rem_percent*total/12000,deep_percent*total/12000, light_percent*total/12000,none_percent*total/12000],
+    y: [rem_percent*total/360000,deep_percent*total/360000, light_percent*total/360000,none_percent*total/360000],
     type: 'bar'
   }
 ];
+ 
+Plotly.newPlot('graph1', data_0);
 Plotly.newPlot('graph2', data_2,layout);
 Plotly.newPlot('bargraph', data4);
 deep_percent = deep_percent.toFixed(0);
@@ -415,7 +671,7 @@ else if(deep_percent<50)
 {
 document.getElementById("text").textContent = "Your deep sleep percentage is "+deep_percent+"% .We Recommond you to use Sleep Inducer in mode II";
 }
-else if (deep_percent>90){
+else if (deep_percent>=80){
   document.getElementById("text").textContent = "Your deep sleep percentage is "+deep_percent+"% .You Sleep is good no need to use the device";
 }
 
