@@ -3,282 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style>
-body {
-  font-size:16px;
-  color:#fff;
-
-
-  background-size:cover;
-  margin:0px;
-}
-html{
-  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-}
-#centerbutton{
-  display: flex;
-  justify-content:center;
-}
-#centerrun{
-  display: flex;
-  justify-content:center;
-}
-#centerclock{
-  display: flex;
-  color:black;
-  justify-content:center;
-}
-
-#clock{
-  color:black;
-  font-size:25px; 
-}
-
-
-.navbar{
-  width: 100%;
-background:black;
-
-  color:black;
-  width:100%;
-  font-size:20px;
-  opacity:0.9;
-  margin-botom:50px;
-  
-
-}
-.navbar li{
-  text-decoration:none;
-  display:inline;
-  padding: 20px;
-}
-li a{
-  text-decoration:none;
-  color:white;
-  padding:20px;
-
-}
-ul{
-  list-style-type:none;
-  margin:0;
-  padding:20px 0px 20px 0px;
-}
-.navbar a:hover{
-  background:blue;
-opacity:1;
-}
-.navbar a:active{
-background-color:#0091ff;
-opacity:0.7;
-}
-@media (min-width: 992px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
-    float: left;
-  }
-  .col-lg-1 {
-    width: 8.33%;
-  }
-  .col-lg-2 {
-    width: 16.66%;
-  }
-  .col-lg-3 {
-    width: 25%;
-  }
-  .col-lg-4 {
-    width: 33.33%;
-  }
-  .col-lg-5 {
-    width: 41.66%;
-  }
-  .col-lg-6 {
-    width: 50%;
-  }
-  .col-lg-7 {
-    width: 58.33%;
-  }
-  .col-lg-8 {
-    width: 66.66%;
-  }
-  .col-lg-9 {
-    width: 74.99%;
-  }
-  .col-lg-10 {
-    width: 83.33%;
-  }
-  .col-lg-11 {
-    width: 91.66%;
-  }
-  .col-lg-12 {
-    width: 100%;
-  }
-}
-#section1{
-  font-size:20px;
-}
-/********** Medium devices only **********/
-
-@media (max-width: 929px) {
-  .col-s-1, .col-s-2, .col-s-3, .col-s-4, .col-s-5, .col-s-6, .col-s-7, .col-s-8, .col-s-9, .col-s-10, .col-s-11, .col-s-12 {
-    float: left;
-  }
-  .col-s-1 {
-    width: 8.33%;
-  }
-  .col-s-2 {
-    width: 16.66%;
-  }
-  .col-s-3 {
-    width: 25%;
-  }
-  .col-s-4 {
-    width: 33.33%;
-  }
-  .col-s-5 {
-    width: 41.66%;
-  }
-  .col-s-6 {
-    width: 50%;
-  }
-  .col-s-7 {
-    width: 58.33%;
-  }
-  .col-s-8 {
-    width: 66.66%;
-  }
-  .col-s-9 {
-    width: 74.99%;
-  }
-  .col-s-10 {
-    width: 83.33%;
-  }
-  .col-s-11 {
-    width: 91.66%;
-  }
-  .col-s-12 {
-    width: 100%;
-  }
-}
-.section{
-  color: #002a69;
-  background-color:white;
-  margin: 20px;
-  padding: 0px 0px 0px 00px;
-  opacity: 0.8;
- height:500px;
-
-
-}
-*{
-  box-sizing: border-box;
-}
-span{
-  background-color:black;
-  color:white;
-  width:100%;
-  display:block;
-  text-align:center;
-  font-size:30px;
-  padding:5px;
-
-}
-
-#prev{
-  position:relative;
- padding:10px 20px;
- float: left;
- margin-left:50px;
- background-color:#4CAF50;
- color:white;
- border:none;
-}
-#next{
-position: relative;
- padding:10px 20px;
- float: right;
- margin-right: 50px;
- background-color:#4CAF50;
- color: white;
- border:none;
-}
-#button1{
-  background-color: #4CAF50; /* Green */
-  border: red;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-
-}
-#button1:hover{
-  background-color:blue;
-  opacity:0.9;
-}
-p{
-  
-}
-img{
-
-}
-h1{
-  background-color:red;
-}
-#graph1{
-  display:inline;
-  align: center;
-  display: flex;
-  justify-content: center;
-    size:inherit;
-  
-}
-#graph2{
-  display:inline;
- align: center;
- display: flex;
-  justify-content: center;
-    size:inherit;
-
-}
-#bargraph{
-  display:inline;
- align: center;
- display: flex;
-  justify-content: center;
-  height:300px;
-  width:300px;
-
-}
-#hidden{
-  display:none;
-}
-p{
-  font-size:20px;
-}
-#working{
-  background-color:#e60000;
-  width:200px;
-   padding: 15px 32px;
-  text-align:center;
-  color:white;
- 
-}
-</style>
- 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href = "styles.css">
+<link rel="stylesheet" href = "alert.css">
     <title>Sleep Analyser</title>
    
   </head>
 <body> 
 <nav class ="navbar">
 <ul>
-<li><a href = "192.168.73.43">APP</a></li>
-<li><a href = "https://sakthiram17.github.io/FirstRepo/projects/biomed/sleepinducer/home.html">Guide</a></li>
+  <li class = "brand"><i class = "fa fa-heartbeat"></i></li>
+<li class = "active"><a href = "index.html">APP</a></li>
+<li><a href = "project.html">Guide</a></li>
 </ul>
 </nav>
 <div class="row">
@@ -290,11 +31,22 @@ p{
 
   <button id = "button1" type = "button">Get Sleep Analysis</button>
 </div>
+<div id = "fill">
+  <ul>
+  <li>Total Hours of Sleep <span class ="span2" id ="sleep"></span></li>
+  <li>Total Hours of Recording <span class ="span2" id ="record"></span></li>
+  
+  <li>Total Hours of DEEP Sleep <span class ="span2" id = "dsleep"></span></li>
+  <li>Total Hours of REM Sleep <span class ="span2" id = "rsleep"></span></li>
+  <li>Total Hours of LIGHT Sleep <span class ="span2" id = "lsleep"></span></li>
+  <li>Total Hours of Awakeness <span class ="span2" id = "asleep"></span></li>
+ 
+  <li>Sleep index<span id ="index" class ="span2"></span></li>
+</ul>
+</div>
     
   </p>
- <div id = "centerrun">
-  <p id ="working">The Device is not Running</p>
-  </div>
+
   <div id = "centerclock">
   <p id ="clock"></p>
   </div>
@@ -307,8 +59,8 @@ p{
   <p>
 
   <div id = "graph1"></div>
-     <button id = "prev" type = "button"><</button>
-   <button id = "next" type = "button">></button>
+     <button id = "prev" type = "button" class = " fa fa-arrow-circle-left"></button>
+   <button id = "next" type = "button"  class = " fa fa-arrow-circle-right"></button>
   </p></div></div>
  
  <div class="col-lg-6 col-md-6 col-s-12">
@@ -325,12 +77,104 @@ p{
   </p></div></div>
 
 </div>
- 
+
+<div class="loader"></div>
 <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script> 
-<script type="text/javascript">
-next_click = 0;
-prev_click = 0;
-document.getElementById("button1").addEventListener("click", Plot_Graphs);
+<script src = "alert.js"></script>
+<script type = "module">
+var datelist = [];
+var start_time;
+var colour = "black";
+var sectionlist = document.getElementsByClassName('section');
+var sectionele = sectionlist[0];
+var bgcolor = window.getComputedStyle(sectionele, null).getPropertyValue("background-color");
+if(bgcolor== 'rgb(94, 14, 66)'){
+  colour = "white";
+} 
+var size =500;
+var mat = window.matchMedia("(max-width:500px)");
+if(mat.matches)
+{
+size = 320;
+}
+// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+  import{getDatabase, ref, set, child, update, remove,get}
+ from  "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyBgIWydOijimi0Hio9DLn692f-K1Ri_jlY",
+  authDomain: "sleepanalyzer2-b9951.firebaseapp.com",
+  databaseURL: "https://sleepanalyzer2-b9951-default-rtdb.firebaseio.com",
+  projectId: "sleepanalyzer2-b9951",
+  storageBucket: "sleepanalyzer2-b9951.appspot.com",
+  messagingSenderId: "22825152423",
+  appId: "1:22825152423:web:2b0c5dfa40a94a44d65082",
+  measurementId: "G-DE1W2KHVN3"
+};
+
+var time = [];
+var datelist = [];
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getDatabase();
+var arraylist = ["Mon","Tue","Wed","Th","Fri","Sat","Sun"];
+
+
+
+
+var data_set = "";
+var datelist_str = [];
+ function SelectData()
+ {
+   var ele = document.getElementsByClassName('active1');
+  var element = ele[0];
+  var pos = arraylist.indexOf(element.innerHTML);
+  var url =`data${pos}`;
+
+  const dbref = ref(db);
+  displayload();
+ get(child(dbref,url)).then(snapshot=>{
+  var movements = snapshot.val();
+
+ data_set = movements;
+ datelist = [];
+ start_time = "11-12-21";
+var t = [];
+ var newdate_start = new Date(start_time);
+ var newdate = new Date(start_time);
+ hideload(); 
+ Plot_Graphs();
+datelist_str  = [];
+ for(var i =0;i<data_set.length;i++)
+ { 
+  
+   datelist.push(newdate);
+   datelist_str.push(newdate.toDateString());
+  t.push(i);
+   newdate.setSeconds(newdate.getSeconds()+1);
+
+ }
+ time = t;
+
+ });
+
+ //get(child(dbref,"starttime")).then(snapshot=>{
+  //start_time = snapshot.val();
+
+ //});
+ 
+
+}
+ 
+var next_click = 0;
+var prev_click = 0;
+document.getElementById("button1").addEventListener("click", SelectData);
 var data_set = [];
 function setTime()
 {
@@ -354,10 +198,12 @@ var data2 = [{
   labels: ['REM Sleep', 'Deep Sleep', 'Light Sleep','Awake'],
   type: 'pie'
 }];
+if(colour == "white")
+{
 var layout = {
   autosize: true,
-  width: 300,
-  height: 300,
+  width: size,
+  height: size,
   margin: {
     l: 5,
     r: 5,
@@ -365,7 +211,70 @@ var layout = {
     t: 10,
     pad: 4
   },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "white"
+  }
+  
+};}
+else{
+  var layout = {
+  autosize: true,
+  width: size,
+  height: size,
+  margin: {
+    l: 5,
+    r: 5,
+    b: 10,
+    t: 10,
+    pad: 4
+  },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "black"
+  }
+  
+};}
+
+if(colour == "white")
+{
+var layout1 = {
+  autosize:true,
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+      textfont: {
+    color: colour
+  },
+  font:{
+    color:"white"
+  }
+ 
+  
+};}
+else{
+
+  var layout1 = {
+  autosize:true,
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+      textfont: {
+    color: colour
+  },
+  font:{
+    color:"black"
+  }
+ 
+  
 };
+}
+
+
+
+
+
+
 var data4 = [
   {
     x: ['REM SLeep (in hours)', 'Deep Sleep (in hours)', 'Light Sleep(in hours)','Awake (in hours)'],
@@ -373,100 +282,80 @@ var data4 = [
     type: 'bar',
      marker: {
     line: {
-      width: 0.5
-    }
-        options: {
-        scales: {
-            xAxes: [{
-                barThickness: 6,  // number (pixels) or 'flex'
-                maxBarThickness: 8 // number (pixels)
-            }]
-        }
+      width: 2
     }
   }
     
   }
 ];
 
-time_iter = 0;
-time = [];
+var time_iter = 0;
+var time = [];
 Plotly.newPlot('graph2', data2,layout);
 Plotly.newPlot('graph1', data,layout);
-Plotly.newPlot('bargraph',data4);
+Plotly.newPlot('bargraph',data4,layout1);
 
 setInterval(function() {
   
-  getData();
     setTime();
 }, 1000); 
-function getData() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-     var l = this.responseText.length;
-    if (this.readyState == 4 && this.status == 200&& (this.responseText[l-1]==0||this.responseText[l-1]==1)) {
-      data_set = this.responseText;
-      document.getElementById("working").textContent = "The Device is Running";
-      document.getElementById("working").style.backgroundColor = "#4CAF50";
-        var d = new Date();
-    var minutes = d.getMinutes();
-    var seconds = d.getSeconds();
-    var hours = d.getHours();
-    var temp = String(hours)+':'+String(minutes)+':'+String(seconds);
-    //time.push(temp);
-    }
-   
-    else if(this.responseText[l-1] == 's')
-    {
-      document.getElementById("working").textContent = "The Device is not Running";
-      document.getElementById("working").style.backgroundColor = "#e60000";
-    }
-  
-  };
-  xhttp.open("GET", "app", true);
-  xhttp.send();
 
-}
 
-/*function getData() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-
-    if(this.responseText == "stop")
-    {
-      document.getElementById("working").textContent = "The Device is not Running";
-      document.getElementById("working").style.backgroundColor = "#e60000";
-    }
-
-    if (this.readyState == 4 && this.status == 200&& (this.responseText==0||this.responseText==1)) {
-      data_set.push(this.responseText);
-      document.getElementById("working").textContent = "The Device is Running";
-      document.getElementById("working").style.backgroundColor = "#4CAF50";
-        var d = new Date();
-    var minutes = d.getMinutes();
-    var seconds = d.getSeconds();
-    var hours = d.getHours();
-    time.push(String(hours)+":"+String(minutes)+":"+String(seconds));
-    }
-   
-  
-  };
-  xhttp.open("GET", "app", true);
-  xhttp.send();
-  
-}*/
 document.getElementById("prev").addEventListener("click", move_prev);
 document.getElementById("next").addEventListener("click", move_next);
 function move_next()
-{ 
+{ var data_set1 =data_set;
   if(next_click>prev_click)
   {
     alert("You are at the end of Graph");
   }
-  time1 = time.slice(data_set1.length-100,data.set1.length-1)
+  var data_set1 = data_set1.split("");
+  var time1 = time.slice(data_set1.length-100,data_set1.length-1);
   next_click = next_click+1;
-  data_set1 = data_set.split("");
- new_data_set = data_set1.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100);
-var data_0 = [
+ 
+ var new_data_set = data_set1.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100);
+
+ if(colour == "white")
+{
+var layout = {
+  autosize: true,
+  width: size,
+  height: size,
+  margin: {
+    l: 5,
+    r: 5,
+    b: 10,
+    t: 10,
+    pad: 4
+  },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "white"
+  }
+  
+};}
+else{
+  var layout = {
+  autosize: true,
+  width: size,
+  height: size,
+  margin: {
+    l: 5,
+    r: 5,
+    b: 10,
+    t: 10,
+    pad: 4
+  },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "black"
+  }
+  
+};}
+
+ var data_0 = [
   {
     x: time1,
     y: new_data_set,
@@ -474,17 +363,16 @@ var data_0 = [
   }
 ];
 
-Plotly.newPlot('graph1', data_0);
-}
+Plotly.newPlot('graph1', data_0),layout;
+}var data_set1 = data_set;
 function move_prev()
-{ time1 = time.slice(data_set1.length-100,data_set1.length-1)
-  if((prev_click*99>data_set.length))
+{ var time1 = time.slice(data_set1.length-100,data_set1.length-1)
+  if((prev_click*99>data_set1.length))
   {
     alert("You are at the end of Graph");
   }
   prev_click = prev_click +1;
-  data_set1 = data_set.split("");
- new_data_set = data_set1.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100)
+ var new_data_set = data_set.slice(data_set1.length-(prev_click-next_click)*100,data_set1.length-(prev_click-next_click-1)*100)
 var data_0 = [
   {
     x: time1,
@@ -492,169 +380,142 @@ var data_0 = [
     type: 'bar'
   }
 ];
+if(colour == "white")
+{
+var layout = {
+  autosize: true,
+  width: size,
+  height: size,
+  margin: {
+    l: 5,
+    r: 5,
+    b: 10,
+    t: 10,
+    pad: 4
+  },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "white"
+  }
+  
+};}
+else{
+  var layout = {
+  autosize: true,
+  width: size,
+  height: size,
+  margin: {
+    l: 5,
+    r: 5,
+    b: 10,
+    t: 10,
+    pad: 4
+  },
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+  font: {
+    color: "black"
+  }
+ 
+  
+};}
 
-Plotly.newPlot('graph1', data_0);
+Plotly.newPlot('graph1', data_0,layout);
 }
+
 function Plot_Graphs()
 {
-  if(data_set.length>1&&data_set!=null)
-  {
-  x = data_set.split("");
-}
-//if(data_set.length<120)
-//{
- // alert("Device has ran for less than a hour please come back later");
- // return;
-//}
+  SelectData();
+ if(typeof(data_set)=="string")
+  data_set = data_set.split("");
+
+var rem = 0;
+var awake = 0;
+var light = 0;
+var deep = 0;
+var data_set1 = data_set;
+var plot_data_set = data_set;
 
 
-/*l2 = time.length;
-l1 = data_set.length;
-if(l1!=l2)
-{
-  while(l1!=l2){
-  start_time = time[0].split(":");
-  console.log(start_time[0]);
-  console.log(start_time[1]);
-  console.log(start_time[2]);
-  if((l1-l2)%60<60)
-  { seconds = String((parseInt(start_time[2])-(l1-l2)%60));
-    console.log(seconds);
-    if(parseInt(seconds)>0)
-    {
-    t = start_time[0]+":"+start_time[1]+":"+seconds;
-    }
-    else{
-      if(parseInt(start_time[1])-1<0){
-      var hours_fin = String(parseInt(start_time[0]) - 1);
-      t = hours_fin+":"+string(60-parseInt(start_time[1]))+":"+start_time[2];
-
-      }else{
-
-      seconds = String(60-parseInt(seconds));
-      var newmin = String(parseInt(start_time[1])-1);
-      t = start_time[0]+":"+newmin+":"+seconds;
-     console.log(seconds);}
-    }
-   l1 = l1-1;
-  }
-  else if(((l1-l2)%60)>=60&&((l1-l2)%60<3600))
-  {
-    var extramin = (l1-l2)%60;
-    var min_fin = -extramin + parseInt(start_time[1]);
-    if(min_fin<0)
-    {
-      if(start_time[0]<1)
-      {
-      var min_fin = String(min_fin-60);
-      hours_fin = String(24+hours_fin);
-      var hours_fin = String(parseInt(start_time[0]) - 1);
-      t = hours_fin+":"+min_fin+":"+start_time[2];
-      }
-      else{
-      var min_fin = String(min_fin-60);
-      var hours_fin = String(parseInt(start_time[0]) - 1);
-      t = hours_fin+":"+min_fin+":"+start_time[2];
-}
-    }
-    else{
-      t = start_time[0]+":"+min_fin+":"+start_time[2];
-    }
-    l1 = l1-1;
-}
-else if((l1-l2)%60>=3600)
-{
-var extrahour = (l1-l2)%3600;
-var hour_fin = -extrahour + parseInt(start_time[0]);
-if(hours_fin>0)
-{
- t = hour_fin+":"+start_time[1]+":"+start_time[2];
-}
-else{
-hours_fin = String(24+hours_fin);
- t = hour_fin+":"+start_time[1]+":"+start_time[2];
-
-}
-l1 = l1 - 1;
-}
- 
- time.unshift(t);
-}
-}*/
-for(var i = 0;i<data_set.length;i++)
-  {time.push(i+1);
-}
-
-
-
-var rem_iter = 0;
-var light_iter = 0;
-var deep_sleep_iter = 0;
-var time_step = 30;
-var rem = 5*60;
-var light = 2*60;
-var no_sleep = 15*60;
-var n_rem = 0;
-var n_light = 0;
-var n_none = 0;
-var n_deep_sleep = 0;
-for(var i = 0;i<data_set.length;i++)
-{
-  if(data_set[i] == '0')
-  {
-    rem_iter =rem_iter +1;
-    light_iter = light_iter +1;
-    deep_sleep_iter = deep_sleep_iter+1;
-  }
-  else{
- rem_iter = 0;
-    light_iter = 0;
-    deep_sleep_iter = 0;
-
-  }
-  if(rem_iter ==rem/time_step)
-  {
-    rem_iter = 0;
-    n_rem = n_rem+1
-  }
-  if(light_iter==light/time_step)
-  {
-    light_iter = 0;
-    n_light = n_light +1
-  }
-  if(deep_sleep_iter==no_sleep/time_step)
-  {
-
-  deep_sleep_iter = 0;
-  n_deep_sleep = n_deep_sleep + 1;
-  }
-}
-data_set1 = data_set.split("");
-plot_data_set = data_set1.slice(data_set.length-100,data_set.length-1);
-if(time.length>=100)
-{
-time1 = time.slice(data_set.length-100,data_set.length-1);
-var data_0 = [
-  {
-    x: time1,
-    y: plot_data_set,
-    type: 'bar'
-  }
-];
-}else{
   var data_0 = [
   {
     x: time,
-    y: plot_data_set,
+    y: data_set1,
     type: 'bar'
   }
 ];
+
+var newdata_set = [];
+var newtime = [];
+function sumof(arr)
+{ var sum = 0;
+  for(var i =0;i<arr.length;i++)
+  {
+    sum = sum + arr[i];
+  }
+  return sum
 }
-var total = x.length;
+
+
+let vectors = new Array();
+for (let i = 0 ; i < data_set.length ; i++) {
+  vectors[i] = [data_set[i],time[i]];
+}
+var res = kmeans(vectors,4);
+
+
+var sleepindex = [];
+for(var i =0;i<4;i++)
+{
+sleepindex.push(calcsleepindex(res.clusters[i].points));
+}
+var newsleepindex = sleepindex;
+newsleepindex.sort();
+for(var i =0;i<4;i++)
+{
+
+for(var j = 0;j<4;j++)
+{
+  if(newsleepindex[i]==sleepindex[j])
+  {
+     var pos = j;
+  }
+}
+if(pos==3)
+{
+  deep = res.clusters[i].points;
+}
+else if(pos==2){
+  light = res.clusters[i].points;
+}
+else if(pos==1)
+{
+  rem= res.clusters[i].points;
+}
+else{
+  awake = res.clusters[i].points;
+}
+}
+
+var n_rem = rem.length;
+var n_deep_sleep = deep.length;
+var n_light = light.length;
+
+var total = data_set.length;
 var rem_percent = (n_rem/total)*100;
 var deep_percent = (n_deep_sleep/total)*100;
 var light_percent = (n_light/total)*100;
 var none_percent =  100 - rem_percent - deep_percent - light_percent;
+
+var am = none_percent * total/100;
+document.getElementById('sleep').innerHTML = ((n_rem+n_light+n_deep_sleep)/3600).toFixed(2);
+document.getElementById('record').innerHTML = (total/3600).toFixed(2);
+document.getElementById('lsleep').innerHTML = (n_light/3600).toFixed(2);
+document.getElementById('rsleep').innerHTML = (n_rem/3600).toFixed(2);
+document.getElementById('dsleep').innerHTML = (n_deep_sleep/3600).toFixed(2);
+document.getElementById('asleep').innerHTML = (none_percent*(total)/360000).toFixed(2);
+document.getElementById('index').innerHTML = ((total/(total+am))).toFixed(2);
 var data_2 = [{
   values: [rem_percent, deep_percent, light_percent,none_percent],
   labels: ['REM Sleep', 'Deep Sleep', 'Light Sleep','Awake'],
@@ -667,11 +528,53 @@ var data4 = [
     type: 'bar'
   }
 ];
- 
+if(colour == "white")
+var layout2 = {
+  autosize:true,
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+      textfont: {
+    color: colour
+  },
+  font:{
+    color:"white"
+  }
+
+}
+else{
+  var layout2 = {
+  autosize:true,
+  plot_bgcolor:bgcolor,
+  paper_bgcolor:bgcolor,
+      textfont: {
+    color: colour
+  },
+  font:{
+    color:"black"
+  }
+
+}
+}
+
+
+
+  var data_0 = [
+  {
+    x: time,
+    y: data_set1,
+    type: 'bar'
+  }
+];
+
+
+console.log(datelist_str.length)
+
 Plotly.newPlot('graph1', data_0);
 Plotly.newPlot('graph2', data_2,layout);
-Plotly.newPlot('bargraph', data4);
+Plotly.newPlot('bargraph', data4,layout2);
 deep_percent = deep_percent.toFixed(0);
+
+
 if(deep_percent<80)
 {
 document.getElementById("text").textContent = "Your deep sleep percentage is "+deep_percent+"% .We Recommond you to use Sleep Inducer in mode I";
@@ -685,11 +588,277 @@ else if (deep_percent>=80){
 }
 
 }
+var list = document.getElementsByClassName('toggle');
+for(var i = 0;i<list.length;i++)
+{
+  list[i].addEventListener('click',function()
+  {
+    
+    var elist = document.getElementsByClassName('active1');
+    var e = elist[0];
+    e.classList.remove('active1');
+    this.classList.add('active1');
+
+  });
+}
+function displayload()
+{
+ var loader  = document.getElementsByClassName('loader');
+ loader = loader[0];
+loader.style.display = "block";
+}
+function hideload()
+{
+  var loader  = document.getElementsByClassName('loader');
+ loader = loader[0];
+ loader.style.removeProperty('display');
+loader.style.display = "none";
+loader.style.visibility= "hidden";
+}
 
 
- 
- </script>
+//Clustering Algorithm start
+const MAX_ITERATIONS = 50;
 
+function randomBetween(min, max) {
+  return Math.floor(
+    Math.random() * (max - min) + min
+  );
+}
+
+function calcMeanCentroid(dataSet, start, end) {
+  const features = dataSet[0].length;
+  const n = end - start;
+  let mean = [];
+  for (let i = 0; i < features; i++) {
+    mean.push(0);
+  }
+  for (let i = start; i < end; i++) {
+    for (let j = 0; j < features; j++) {
+      mean[j] = mean[j] + dataSet[i][j] / n;
+    }
+  }
+  return mean;
+}
+
+function getRandomCentroidsNaiveSharding(dataset, k) {
+  // implementation of a variation of naive sharding centroid initialization method
+  // (not using sums or sorting, just dividing into k shards and calc mean)
+  // https://www.kdnuggets.com/2017/03/naive-sharding-centroid-initialization-method.html
+  const numSamples = dataset.length;
+  // Divide dataset into k shards:
+  const step = Math.floor(numSamples / k);
+  const centroids = [];
+  for (let i = 0; i < k; i++) {
+    const start = step * i;
+    let end = step * (i + 1);
+    if (i + 1 === k) {
+      end = numSamples;
+    }
+    centroids.push(calcMeanCentroid(dataset, start, end));
+  }
+  return centroids;
+}
+
+function getRandomCentroids(dataset, k) {
+  // selects random points as centroids from the dataset
+  const numSamples = dataset.length;
+  const centroidsIndex = [];
+  let index;
+  while (centroidsIndex.length < k) {
+    index = randomBetween(0, numSamples);
+    if (centroidsIndex.indexOf(index) === -1) {
+      centroidsIndex.push(index);
+    }
+  }
+  const centroids = [];
+  for (let i = 0; i < centroidsIndex.length; i++) {
+    const centroid = [...dataset[centroidsIndex[i]]];
+    centroids.push(centroid);
+  }
+  return centroids;
+}
+
+function compareCentroids(a, b) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function shouldStop(oldCentroids, centroids, iterations) {
+  if (iterations > MAX_ITERATIONS) {
+    return true;
+  }
+  if (!oldCentroids || !oldCentroids.length) {
+    return false;
+  }
+  let sameCount = true;
+  for (let i = 0; i < centroids.length; i++) {
+    if (!compareCentroids(centroids[i], oldCentroids[i])) {
+      sameCount = false;
+    }
+  }
+  return sameCount;
+}
+
+// Calculate Squared Euclidean Distance
+function getDistanceSQ(a, b) {
+  const diffs = [];
+  for (let i = 0; i < a.length; i++) {
+    diffs.push(a[i] - b[i]);
+  }
+  return diffs.reduce((r, e) => (r + (e * e)), 0);
+}
+
+// Returns a label for each piece of data in the dataset. 
+function getLabels(dataSet, centroids) {
+  // prep data structure:
+  const labels = {};
+  for (let c = 0; c < centroids.length; c++) {
+    labels[c] = {
+      points: [],
+      centroid: centroids[c],
+    };
+  }
+  // For each element in the dataset, choose the closest centroid. 
+  // Make that centroid the element's label.
+  for (let i = 0; i < dataSet.length; i++) {
+    const a = dataSet[i];
+    let closestCentroid, closestCentroidIndex, prevDistance;
+    for (let j = 0; j < centroids.length; j++) {
+      let centroid = centroids[j];
+      if (j === 0) {
+        closestCentroid = centroid;
+        closestCentroidIndex = j;
+        prevDistance = getDistanceSQ(a, closestCentroid);
+      } else {
+        // get distance:
+        const distance = getDistanceSQ(a, centroid);
+        if (distance < prevDistance) {
+          prevDistance = distance;
+          closestCentroid = centroid;
+          closestCentroidIndex = j;
+        }
+      }
+    }
+    // add point to centroid labels:
+    labels[closestCentroidIndex].points.push(a);
+  }
+  return labels;
+}
+
+function getPointsMean(pointList) {
+  const totalPoints = pointList.length;
+  const means = [];
+  for (let j = 0; j < pointList[0].length; j++) {
+    means.push(0);
+  }
+  for (let i = 0; i < pointList.length; i++) {
+    const point = pointList[i];
+    for (let j = 0; j < point.length; j++) {
+      const val = point[j];
+      means[j] = means[j] + val / totalPoints;
+    }
+  }
+  return means;
+}
+
+function recalculateCentroids(dataSet, labels, k) {
+  // Each centroid is the geometric mean of the points that
+  // have that centroid's label. Important: If a centroid is empty (no points have
+  // that centroid's label) you should randomly re-initialize it.
+  let newCentroid;
+  const newCentroidList = [];
+  for (const k in labels) {
+    const centroidGroup = labels[k];
+    if (centroidGroup.points.length > 0) {
+      // find mean:
+      newCentroid = getPointsMean(centroidGroup.points);
+    } else {
+      // get new random centroid
+      newCentroid = getRandomCentroids(dataSet, 1)[0];
+    }
+    newCentroidList.push(newCentroid);
+  }
+  return newCentroidList;
+}
+
+function kmeans(dataset, k, useNaiveSharding = true) {
+  if (dataset.length && dataset[0].length && dataset.length > k) {
+    // Initialize book keeping variables
+    let iterations = 0;
+    let oldCentroids, labels, centroids;
+
+    // Initialize centroids randomly
+    if (useNaiveSharding) {
+      centroids = getRandomCentroidsNaiveSharding(dataset, k);
+    } else {
+      centroids = getRandomCentroids(dataset, k);
+    }
+
+    // Run the main k-means algorithm
+    while (!shouldStop(oldCentroids, centroids, iterations)) {
+      // Save old centroids for convergence test.
+      oldCentroids = [...centroids];
+      iterations++;
+
+      // Assign labels to each datapoint based on centroids
+      labels = getLabels(dataset, centroids);
+      centroids = recalculateCentroids(dataset, labels, k);
+    }
+
+    const clusters = [];
+    for (let i = 0; i < k; i++) {
+      clusters.push(labels[i]);
+    }
+    const results = {
+      clusters: clusters,
+      centroids: centroids,
+      iterations: iterations,
+      converged: iterations <= MAX_ITERATIONS,
+    };
+    return results;
+  } else {
+    throw new Error('Invalid dataset');
+  }
+}
+//Clustering Algorithm end
+function calcsleepindex(data)
+{
+var sum = 0;
+for(var i =0;i<data.length;i++)
+{
+  sum = sum + parseFloat(data[i]);
+}
+
+if(data.length==0)
+{
+  return 1;
+}
+return (parseFloat(sum/data.length));
+}
+var sumdataset = [];
+var sumdataset2 = [];
+
+</script>
+ <script src = "script.js"></script>
+<footer>
+  <nav class ="navbar">
+    <ul>
+    <li class = "active1 toggle">Mon</li>
+    <li class = "toggle">Tue</li>
+    <li class = "toggle">Wed</li>
+    <li class = "toggle">Th</li>
+    <li class = "toggle">Fri</li>
+    <li class = "toggle">Sat</li>
+    <li class = "toggle">Sun</li>
+    <li class = "toggle" id ="summary"><a href ="summary.html">Overall</a></li>
+    </ul>
+    </nav>
+</footer>
 </body>
 
 </html>
